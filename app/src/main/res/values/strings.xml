@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">AppentusDemo</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="ok">Ok</string>
+    <string name="internet_connection_lost">Internet connection not available. Check Now</string>
+</resources>
