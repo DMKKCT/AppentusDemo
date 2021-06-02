@@ -22,12 +22,11 @@ class MainActivity : AppCompatActivity() {
             activityMainBinding!!.activityModel!!.init(activityMainBinding!!)
         }
         activityMainBinding!!.executePendingBindings()
+        setTitle(getString(R.string.tl_main))
         setupListUpdate()
     }
 
     private fun setupListUpdate() {
-
-//        activityMainBinding!!.activityModel!!.fetchList()
         activityMainBinding!!.activityModel!!.imageList.observe(context,
             { rideHistoryList ->
                 if (rideHistoryList.isEmpty()) {
