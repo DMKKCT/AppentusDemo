@@ -1,5 +1,6 @@
 package com.appentusdemo.view.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -8,6 +9,8 @@ import android.widget.ImageView
 import androidx.annotation.LayoutRes
 import androidx.recyclerview.widget.RecyclerView
 import com.appentusdemo.R
+import com.appentusdemo.R.drawable
+import com.appentusdemo.R.drawable.*
 import com.appentusdemo.model.GetDataResponseBean
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
@@ -33,11 +36,12 @@ class ImageListAdapter(
         return ImageItemView(itemView)
     }
 
+    @SuppressLint("CheckResult")
     override fun onBindViewHolder(holder: ImageItemView, position: Int) {
             val requestOptions = RequestOptions()
-            requestOptions.placeholder(null)
-            requestOptions.error(null)
-            Glide.with(context!!)
+            requestOptions.placeholder(progress_animation)
+            requestOptions.error(img_no_available)
+            Glide.with(context)
                 .setDefaultRequestOptions(requestOptions)
                 .asBitmap()
                 .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
